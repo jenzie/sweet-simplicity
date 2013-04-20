@@ -1,0 +1,101 @@
+<!-- Jenny Zhen -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Photography</title>
+		<meta name = "description" content = "Just a website to display personal work and client requests."/>
+		<meta name = "keywords" content = "media, media major, photoshop, illustrator, powerpoint, cs3, adobe"/>
+		<link href = "main.css" rel = "stylesheet" type = "text/css" />
+		<link href = "favicon.ico" rel = "shortcut icon" />
+		<link href = "favicon.png" rel = "icon" type = "image/gif" />
+		<script type = "text/javascript">
+			function sendRequest(picname)
+			{
+				if(window.XMLHttpRequest)
+					req = new XMLHttpRequest();
+				else
+					req = new ActiveXObject("Microsoft.XMLHttp");
+					
+				req.onreadystatechange = getCaption;
+				url = "captions.php?pic=" + picname;
+				req.open("GET", url, true);
+				req.send(null);
+			}
+			
+			function getCaption()
+			{
+				if (req.readyState == 4)
+				{
+					document.getElementById("div_caption").innerHTML = req.responseText;
+				}
+			}
+		</script>
+    </head>
+	<body id = "home">
+		<div id = "wrapper">
+			<div id = "sidebar">
+				<div id = "logo">
+					<h1><span>Photography</span></h1>
+				</div>
+				<div id = "main_nav">
+					<ul class = "nav">
+						<li class = "first"><a href = "index.php">Home</a></li>
+						<li><a href = "newest.html">Newest</a></li>
+						<li><a href = "photography.html">Photography</a></li>
+						<li><a href = "design.html">Design Work</a></li>
+						<li><a href = "image.html">Image Work</a></li>
+						<li><a href = "flash.html">Flash Work</a></li>
+						<li><a href = "contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id = "main_content">
+				<div id = "banner"></div>
+				<br><br><br>
+				<h2>Photography</h2>
+				<div align = "center">
+				<img src = "Photography/Final-Sunset.png" id="test" />
+				<table style = "cellpadding:10px" id = "gmenu">
+					<tr>
+                    	<td><span  
+                                onClick = "document.getElementById('test').src='Photography/Final-Sunset.png'" 
+                                onmouseover = "sendRequest('Sunset');">Sunset</span>
+                      	</td>
+                        <td><span 
+                            	onClick = "document.getElementById('test').src='Photography/Final-Trapped.png'" 
+                                onmouseover = "sendRequest('Trapped');">Trapped</span>
+                      	</td>
+                        <td><span 
+                            	onClick = "document.getElementById('test').src='Photography/Final-Water.png'" 
+                                onmouseover = "sendRequest('Water');">Water</span>
+                      	</td>
+                        <td><span 
+                            	onClick = "document.getElementById('test').src='Photography/Final-Wine.png'" 
+                                onmouseover = "sendRequest('Wine');">Wine</span>
+                      	</td>
+                        <td><span 
+                           		onClick = "document.getElementById('test').src='Photography/Final-Glass.png'" 
+                                onmouseover = "sendRequest('Glass');">Glass</span>
+                      	</td>
+                        <td><span 
+                            	onClick = "document.getElementById('test').src='Photography/Final-Light.png'" 
+                                onmouseover = "sendRequest('Light');">Light</span>
+                      	</td>
+                  	</tr>
+               	</table>
+				<div id = "div_caption"></div><br />
+				<p><a href = "photography2.html">&#187; Page 2 &#171;</a></p>
+			</div>
+		</div>	
+		<div class = "clear">&nbsp;</div>
+		</div>
+		<div id = "footer_wrapper">
+			<div id = "footer">
+				Copyright &copy; Sweet Simplicity 2009. All rights reserved. &nbsp;| 
+				<a href="index.php">home</a> | 
+				<a href="about.html">about</a> | 
+				<a href="contact.html">contact</a> |
+			</div>		
+		</div>
+	</body>
+</html>
